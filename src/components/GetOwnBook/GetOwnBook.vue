@@ -109,14 +109,14 @@ export default {
     }
   },
   created () {
-    this.$http.get('/api/book/getReportory')
+    this.$http.get('/api/book/getBooks')
       .then((res) => {
         this.tableData = res.data
       })
   },
   methods: {
     handleSearchBook () {
-      this.$http.get('/api/book/getReportory?bookName=' + this.searchedBook)
+      this.$http.get('/api/book/getBooks?bookName=' + this.searchedBook)
         .then((res) => {
           this.tableData = res.data
         })
@@ -138,7 +138,7 @@ export default {
         price: that.form.price
       }).then((res) => {
         if (res.status === 200 && res.data.status !== false) {
-          that.$http.get('/api/book/getReportory')
+          that.$http.get('/api/book/getBooks')
             .then((res) => {
               that.tableData = res.data
               that.dialogFormVisible = false
@@ -158,7 +158,7 @@ export default {
   }
 }
 </script>
-<style>
+<style scoped>
   .searchInput{
     position: fixed;
     top: 70px;

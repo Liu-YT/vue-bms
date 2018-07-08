@@ -37,14 +37,6 @@
           <span style="margin-left: 10px">{{ scope.row.bookDate ? scope.row.bookDate.slice(0, 10) : scope.row.bookDate }}</span>
         </template>
       </el-table-column>
-      <el-table-column
-        label="库存量"
-        width="180"
-        align="center">
-        <template slot-scope="scope">
-          <span>{{ scope.row.count }}</span>
-        </template>
-      </el-table-column>
 
       <el-table-column
         label="价格"
@@ -212,7 +204,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
   .searchInput{
     position: fixed;
     top: 70px;
